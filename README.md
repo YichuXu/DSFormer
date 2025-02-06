@@ -14,5 +14,5 @@
 <sup>1</sup> Wuhan University, <sup>2</sup> Hubei Luojia Laboratory,  <sup>3</sup> Henan Academy of Sciences,  <sup>*</sup> Corresponding author
 
 <div align="center">
-  <img src="./figures/DSFormer.png"><br><br>
+  <img src="./figures/DSFormer.svg"><br><br>
 </div>
