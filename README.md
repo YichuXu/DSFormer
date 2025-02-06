@@ -9,7 +9,7 @@
 [Lefei Zhang](https://scholar.google.com/citations?user=BLKHwNwAAAAJ&hl=en)<sup>1,2 *</sup>, 
 [Liangpei Zhang](https://scholar.google.com/citations?user=vzj2hcYAAAAJ&hl=en)<sup>1,3 </sup>
 
-[![TGRS paper](https://img.shields.io/badge/TGRS-paper-00629B.svg)](https://ieeexplore.ieee.org/abstract/document/10551264) [![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2410.03171)
+[![NN paper](https://img.shields.io/badge/NN-paper-00629B.svg)](https://ieeexplore.ieee.org/abstract/document/10551264) [![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2410.03171)
 
 <sup>1</sup> Wuhan University, <sup>2</sup> Hubei Luojia Laboratory,  <sup>3</sup> Henan Academy of Sciences,  <sup>*</sup> Corresponding author
 
@@ -87,9 +87,9 @@ ${DATASET_ROOT}   # Dataset root directory
 - The following commands show how to train and evaluate DSFormer for HSI classification:
 ```bash
 python main.py --model DSFormer --dataset_name pu --num_run 10 --epoch 500 --device 0 --dataID 1 --patch_size 10 --k 2/5 --train_num 30 --group_num 4 --ps 2
-python main.py --model DSFormer --dataset_name ip --num_run 10 --epoch 500 --device 0 --dataID 4 --patch_size 10 --k 4/5 --train_num 50 --group_num 4 --ps 2
-python main.py --model DSFormer --dataset_name houston13 --num_run 10 --epoch 500 --device 0 --dataID 3 --patch_size 10 --k 3/5 --train_num 50 --group_num 4 --ps 2
-python main.py --model DSFormer --dataset_name whuhh --num_run 10 --epoch 500 --device 0 --dataID 7 --patch_size 10 --k 3/5 --train_num 50 --group_num 4 --ps 2
+python main.py --model DSFormer --dataset_name ip --num_run 10 --epoch 500 --device 1 --dataID 4 --patch_size 10 --k 4/5 --train_num 50 --group_num 4 --ps 2
+python main.py --model DSFormer --dataset_name houston13 --num_run 10 --epoch 500 --device 2 --dataID 3 --patch_size 10 --k 3/5 --train_num 50 --group_num 4 --ps 2
+python main.py --model DSFormer --dataset_name whuhh --num_run 10 --epoch 500 --device 3 --dataID 7 --patch_size 10 --k 3/5 --train_num 50 --group_num 4 --ps 2
 ```
 
 ## 📜Reference
