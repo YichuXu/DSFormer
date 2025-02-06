@@ -61,19 +61,19 @@ Download HSI classification dataset from [Zenodo](https://zenodo.org/records/140
 ${DATASET_ROOT}   # Dataset root directory
 ├── datasets
 │   │
-│   ├── pu        # Pavia University HSI data
+│   ├── pu        # Pavia University data
 │   │   ├──PaviaU.mat
 │   │   ├──PaviaU_gt.mat
 │   │
-│   ├── houston13  # Houston 2013 Data fusion contest HSI data
+│   ├── houston13  # Houston 2013 data
 │   │   ├──GRSS2013.mat
 │   │   ├──GRSS2013_gt.mat 
 │   │
-│   ├── ip         # Indian Pines HSI data	
+│   ├── ip         # Indian Pines data	
 │   │   ├──Indian_pines_corrected.mat
 │   │   ├──Indian_pines_gt.mat 
 │   │     
-│   ├── whuhh     # Whu-HongHu UAV HSI data
+│   ├── whuhh     # Whu-HongHu data
 │   │   ├──WHU_Hi_HongHu.mat
 │   │   ├──WHU_Hi_HongHu_gt.mat 
 │   │
