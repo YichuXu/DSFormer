@@ -13,6 +13,104 @@
 
 <sup>1</sup> Wuhan University, <sup>2</sup> Hubei Luojia Laboratory,  <sup>3</sup> Henan Academy of Sciences,  <sup>*</sup> Corresponding author
 
-<div align="center">
-  <img src="./figures/DSFormer.svg"><br><br>
 </div>
+
+
+## 📖Overview
+
+* [**DSFormer**](https://arxiv.org/abs/2410.03171) is a novel Dual Selective Fusion
+Transformer Network  for HSI classification. It adaptively selects and fuses features from diverse
+receptive fields to achieve joint spatial-spectral context modeling, while reducing unnecessary information
+interference by focusing on the most relevant spatial-spectral tokens.  
+
+<div align="center">
+  <img src="./figures/DSFormer.png"><br><br>
+</div>
+
+## 🚀Let's Get Started!
+### `A. Installation`
+**Step 1: Clone the repository:**
+
+Clone this repository and navigate to the project directory:
+```bash
+git clone https://github.com/YichuXu/DSFormer.git
+cd DSFormer
+```
+
+**Step 2: Environment Setup:**
+
+It is recommended to set up a conda environment and installing dependencies via pip. Use the following commands to set up your environment:
+
+***Create and activate a new conda environment***
+
+```bash
+conda create -n DSFormer
+conda activate DSFormer
+```
+
+***Install dependencies***
+
+```bash
+pip install -r requirements.txt
+```
+
+### `B. Data Preparation`
+
+Download HSI classification dataset from [Zenodo](https://zenodo.org/records/14028095) and put it under the [dataset] folder. It will have the following structure: 
+```
+${DATASET_ROOT}   # Dataset root directory
+├── datasets
+│   │
+│   ├── pu        # Pavia University HSI data
+│   │   ├──PaviaU.mat
+│   │   ├──PaviaU_gt.mat
+│   │
+│   ├── houston13  # Houston 2013 Data fusion contest HSI data
+│   │   ├──GRSS2013.mat
+│   │   ├──GRSS2013_gt.mat 
+│   │
+│   ├── ip         # Indian Pines HSI data	
+│   │   ├──Indian_pines_corrected.mat
+│   │   ├──Indian_pines_gt.mat 
+│   │     
+│   ├── whuhh     # Whu-HongHu UAV HSI data
+│   │   ├──WHU_Hi_HongHu.mat
+│   │   ├──WHU_Hi_HongHu_gt.mat 
+│   │
+│   ├── other HSI Datasets   
+│   │   ├ ... 
+│   │    
+
+```
+
+### `C. Performance Evaluation`
+- The following commands show how to train and evaluate DSFormer for HSI classification:
+```bash
+python main_my.py --model DSFormer --dataset_name pu --num_run 10 --epoch 500 --device 0 --dataID 1 --patch_size 10 --k 2/5 --train_num 30 --group_num 4 --ps 2
+python main_my.py --model DSFormer --dataset_name ip --num_run 10 --epoch 500 --device 1 --dataID 4 --patch_size 10 --k 4/5 --train_num 50 --group_num 4 --ps 2
+python main_my.py --model DSFormer --dataset_name houston13 --num_run 10 --epoch 500 --device 2 --dataID 3 --patch_size 10 --k 3/5 --train_num 50 --group_num 4 --ps 2
+python main_my.py --model DSFormer --dataset_name whuhh --num_run 10 --epoch 500 --device 3 --dataID 7 --patch_size 10 --k 3/5 --train_num 50 --group_num 4 --ps 2
+```
+
+## 📜Reference
+
+if you find it useful for your research, please consider giving this repo a ⭐ and citing our paper! We appreciate your support！😊
+```
+@ARTICLE{Xu2025DSFormer,
+  author={Xu, Yichu and Wang, Di and Zhang, Lefei and Zhang, Liangpei},
+  title={Dual Selective Fusion Transformer Network for Hyperspectral Image Classification}, 
+  journal={Neural Networks},
+  volume={},
+  pages={1-15},
+  year={2025},
+}
+```
+
+## 🙋Q & A
+**For any questions, please [contact us.](mailto:xuyichu@whu.edu.cn)**
+
+
+
+# 💖 Thanks
+This project is based on [GSC-ViT](https://github.com/flyzzie/TGRS-GSC-VIT), [TTST](https://github.com/XY-boy/TTST),
+[LSKNet](https://github.com/zcablii/LSKNet), [ObjFormer](https://github.com/ChenHongruixuan/ObjFormer). Thanks for their great work!<br>
