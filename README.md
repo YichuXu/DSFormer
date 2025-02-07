@@ -112,6 +112,6 @@ if you find it useful for your research, please consider giving this repo a ⭐ 
 
 
 
-# 💖 Thanks
+## 💖 Thanks
 This project is based on [GSC-ViT](https://github.com/flyzzie/TGRS-GSC-VIT), [TTST](https://github.com/XY-boy/TTST),
 [LSKNet](https://github.com/zcablii/LSKNet), [ObjFormer](https://github.com/ChenHongruixuan/ObjFormer). Thanks for their great work!<br>
