@@ -50,6 +50,7 @@ conda activate DSFormer
 
 ***Install dependencies***
 
+Our method uses python 3.8, pytorch 1.13, other environments are in requirements.txt
 ```bash
 pip install -r requirements.txt
 ```
