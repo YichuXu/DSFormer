@@ -9,7 +9,7 @@
 [Lefei Zhang](https://scholar.google.com/citations?user=BLKHwNwAAAAJ&hl=en)<sup>1,2 *</sup>, 
 [Liangpei Zhang](https://scholar.google.com/citations?user=vzj2hcYAAAAJ&hl=en)<sup>1,3 </sup>
 
-[![NN paper](https://img.shields.io/badge/NN-paper-00629B.svg)](https://ieeexplore.ieee.org/abstract/document/10551264) [![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2410.03171)
+[![NN paper](https://img.shields.io/badge/NN-paper-00629B.svg)](https://arxiv.org/abs/2410.03171) [![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2410.03171)
 
 <sup>1</sup> Wuhan University, <sup>2</sup> Hubei Luojia Laboratory,  <sup>3</sup> Henan Academy of Sciences,  <sup>*</sup> Corresponding author
 
