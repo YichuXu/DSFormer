@@ -101,9 +101,9 @@ if you find it useful for your research, please consider giving this repo a ⭐ 
   author={Xu, Yichu and Wang, Di and Zhang, Lefei and Zhang, Liangpei},
   title={Dual Selective Fusion Transformer Network for Hyperspectral Image Classification}, 
   journal={Neural Networks},
-  volume={},
-  pages={1-15},
-  year={2025},
+  volume = {187},
+  pages = {107311},
+  year = {2025}
 }
 ```
 
