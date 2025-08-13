@@ -295,7 +295,7 @@ class block(nn.Module):
         a2 = a2.reshape(batch_size, dim // 2, 1, 1)
 
         w1 = a1 * agg[:, 0, :, :].unsqueeze(1)
-        w2 = a2 * agg[:, 0, :, :].unsqueeze(1)
+        w2 = a2 * agg[:, 1, :, :].unsqueeze(1)
 
         attn = attn1 * w1 + attn2 * w2
         attn = self.conv(attn).sigmoid()
@@ -526,19 +526,31 @@ def DSFormer(dataset,kernel_size, ps, k, group_num, emb_dim):
             num_classes=22,
             group_num=group_num
         )
+    elif dataset == 'whuhc':
+        model = dsformer(
+            embed_dim=emb_dim,    
+            img_size=256,
+            patch_size=ps,
+            norm_layer=nn.LayerNorm,
+            num_heads=8,
+            depth=6,
+            drop_rate=0.,
+            num_classes=16,
+            group_num=group_num
+        )
     return model
 
 
 
 if __name__ == '__main__':
-    os.environ["CUDA_VISIBLE_DEVICES"] = "7"
-    input = torch.rand(2,1,30,32,32).cuda()
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    input = torch.rand(2,1,30,13,13).cuda()
 
-    model = DSFormer(dataset='ip', kernel_size=3,  ps=2, k=0.8, group_num=4, emb_dim=128).cuda()
+    model = DSFormer(dataset='pu', kernel_size=3,  ps=2, k=0.8, group_num=4, emb_dim=128).cuda()
     output= model(input)
     print(output.size())
 
     # summary(model, torch.zeros((2, 1, 200, 8, 8)).cuda())
     flops, params = profile(model, inputs=(input,))
-    print('Param:{} K' .format(params/1e3))
-    print('Flops:{} M' .format(flops/1e6))  ## 打印计算量
+    print('Param:{} M' .format(params/1e6))
+    print('Flops:{} M' .format(flops/1e6)) 
