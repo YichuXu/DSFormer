@@ -258,7 +258,9 @@ class block(nn.Module):
         self.conv1 = nn.Conv2d(dim, dim // 2, 1)
         self.conv2 = nn.Conv2d(dim, dim // 2, 1)
         self.conv_squeeze = nn.Conv2d(2, 2, 7, padding=3)
-        self.conv = nn.Conv2d(dim // 2, dim, 1)
+        # self.conv = nn.Conv2d(dim // 2, dim, 1)
+        self.conv = nn.Conv2d(2, 2, 1)
+        self.conv_proj = nn.Conv2d(dim // 2, dim, 1)
 
         self.global_pool = nn.AdaptiveAvgPool2d(1)
         self.global_maxpool = nn.AdaptiveMaxPool2d(1)
@@ -283,6 +285,7 @@ class block(nn.Module):
         avg_attn = torch.mean(attn, dim=1, keepdim=True) # b,1,h,w
         max_attn, _ = torch.max(attn, dim=1, keepdim=True) # b,1,h,w
         agg = torch.cat([avg_attn, max_attn], dim=1) # spa b,2,h,w
+        agg = self.conv(agg).sigmoid()
 
         ch_attn1 = self.global_pool(attn) # b,dim,1, 1
         z = self.fc1(ch_attn1)
@@ -298,7 +301,7 @@ class block(nn.Module):
         w2 = a2 * agg[:, 1, :, :].unsqueeze(1)
 
         attn = attn1 * w1 + attn2 * w2
-        attn = self.conv(attn).sigmoid()
+        attn = self.conv_proj(attn).sigmoid()
 
         return x * attn
 
@@ -528,7 +531,7 @@ def DSFormer(dataset,kernel_size, ps, k, group_num, emb_dim):
         )
     elif dataset == 'whuhc':
         model = dsformer(
-            embed_dim=emb_dim,    
+            embed_dim=emb_dim,
             img_size=256,
             patch_size=ps,
             norm_layer=nn.LayerNorm,
@@ -553,4 +556,4 @@ if __name__ == '__main__':
     # summary(model, torch.zeros((2, 1, 200, 8, 8)).cuda())
     flops, params = profile(model, inputs=(input,))
     print('Param:{} M' .format(params/1e6))
-    print('Flops:{} M' .format(flops/1e6)) 
+    print('Flops:{} M' .format(flops/1e6))
