@@ -15,6 +15,11 @@
 
 </div>
 
+## 🛎️Updates
+* **` Nov. 15th, 2025`**: DSFormer has been selected as ***<font color="red">ESI Highly Cited Papers (TOP 1%)</font>***!
+<div align="center">
+  <img src="./figures/ESI Highly Cited.png"><br><br>
+</div>
 
 ## 📖Overview
 
