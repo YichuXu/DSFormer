@@ -120,4 +120,4 @@ This project is based on [GSC-ViT](https://github.com/flyzzie/TGRS-GSC-VIT), [TT
 [LSKNet](https://github.com/zcablii/LSKNet), [ObjFormer](https://github.com/ChenHongruixuan/ObjFormer). Thanks for their great work!<br>
 
 
-[![Star History Chart](https://api.star-history.com/svg?repos=YichuXu/DSFormer&type=Date)](https://star-history.com/#YichuXu/DSFormer&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=yichuxu%2Fdsformer&type=Date)](https://www.star-history.com/?repos=YichuXu%2FDSFormer&type=date&legend=top-left)
